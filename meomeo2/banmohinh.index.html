@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Mô Hình Store</title>
+  <link rel="icon" href="image/vohang.png">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      scroll-behavior: smooth; 
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgb(226, 164, 50);
+      padding: 12px 0;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+    header img {
+      width: 100%;
+      margin-top: 60px;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .sanpham {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .khung {
+      width: 200px;
+      border: 2px solid #333;
+      border-radius: 10px;
+      text-align: center;
+      background-color: #fff8ee;
+      transition: 0.3s;
+    }
+
+    .khung:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .khung img {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .khung p {
+      margin: 8px 0;
+    }
+    .mua-label {
+      display: inline-block;
+      width: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .mua-label:hover {
+      transform: scale(1.1);
+    }
+    #popup-check {
+      display: none;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    #popup-check:checked + .popup {
+      display: flex;
+    }
+
+    .popup-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      text-align: center;
+    }
+
+    .popup-content input {
+      width: 90%;
+      margin: 8px 0;
+      padding: 8px;
+    }
+
+    .close-label {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: rgb(226, 164, 50);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .close-label:hover {
+      background-color: rgb(255, 180, 60);
+    }
+    section {
+      background-color: #fff3e0;
+      padding: 30px;
+      margin: 40px;
+      border-radius: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+      <a href="Mohinhstore.html">Trang chủ</a>
+    <a href="Thongtinstore.html" target="_blank">Thông tin</a>
+    <a href="Thontinlienhe.html" target="_blank">Liên hệ</a>
+  </nav>
+  <header id="home">
+    <img src="image/sale.png" alt="Banner Sale">
+  </header>
+  <h1 style="color: darkgoldenrod;">SẢN PHẨM HIỆN ĐANG BÁN</h1>
+  <div class="sanpham">
+    <div class="khung">
+      <img src="image/vegeta.webp" alt="Mô Hình Vegeta">
+      <p><b>Mô Hình Vegeta</b></p>
+      <p>Giá: 800.000 VNĐ</p>
+      <label for="popup-check"><img src="image/mua1.jpg" alt="Mua ngay" class="mua-label"></label>
+    </div>
+
+    <div class="khung">
+      <img src="image/lufy1.webp" alt="Mô Hình Luffy">
+      <p><b>Mô Hình Luffy Gear 5</b></p>
+      <p>Giá: 500.000 VNĐ</p>
+      <label for="popup-check"><img src="image/mua1.jpg" alt="Mua ngay" class="mua-label"></label>
+    </div>
+
+    <div class="khung">
+      <img src="image/zoro.webp" alt="Mô Hình Zoro">
+      <p><b>Mô Hình Zoro</b></p>
+      <p>Giá: 500.000 VNĐ</p>
+      <label for="popup-check"><img src="image/mua1.jpg" alt="Mua ngay" class="mua-label"></label>
+    </div>
+
+    <div class="khung">
+      <img src="image/enel.webp" alt="Mô Hình Enel">
+      <p><b>Mô Hình Enel</b></p>
+      <p>Giá: 400.000 VNĐ</p>
+      <label for="popup-check"><img src="image/mua1.jpg" alt="Mua ngay" class="mua-label"></label>
+    </div>
+
+    <div class="khung">
+      <img src="image/kaido.webp" alt="Mô Hình Kaido">
+      <p><b>Mô Hình Kaido</b></p>
+      <p>Giá: 450.000 VNĐ</p>
+      <label for="popup-check"><img src="image/mua1.jpg" alt="Mua ngay" class="mua-label"></label>
+    </div>
+  </div>
+  <input type="checkbox" id="popup-check">
+  <div class="popup">
+    <div class="popup-content">
+      <h3>Nhập Thông Tin Mua Hàng</h3>
+      <input type="text" placeholder="Họ và tên">
+      <input type="text" placeholder="Địa chỉ nhận hàng">
+      <input type="text" placeholder="Số điện thoại">
+      <br>
+      <label for="popup-check" class="close-label">Xác nhận</label>
+    </div>
+  </div>
+  <section id="thongtin">
+    <h2>THÔNG TIN VỀ MÔ HÌNH STORE</h2>
+    <p>Mô Hình Store chuyên cung cấp mô hình nhân vật Anime chất lượng cao.</p>
+    <p>Cam kết sản phẩm chính hãng, giá tốt, giao hàng toàn quốc.</p>
+    <p>Ngoài ra Chúng tôi cam kết về chất lượng sản phẩm đạt yêu cầu ngoài ra nếu có thiệt hại trong quá trình vận chuyển hoàn toàn có thể đền bù sản phẩm mới</p>
+    <p><b>Giờ làm việc:</b> 8:00 - 21:00 mỗi ngày.</p>
+  </section>
+  <section id="lienhe">
+    <h2>LIÊN HỆ CHÚNG TÔI</h2>
+    <p><b>Email:</b> mohinhstore@gmail.com</p>
+    <p><b>Số điện thoại:</b> 0901 234 567</p>
+    <p><b>Địa chỉ:</b> 140a/24 đường 14/9 Phường Phước Hậu tỉnh Vĩnh Long</p>
+  </section>
+</body>
+</html>
